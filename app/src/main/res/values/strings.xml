@@ -19,4 +19,8 @@
     <string name="valReunionFragment">Reunión de Padres</string>
     <string name="valRecursosFragment">Recursos Educativos</string>
     <string name="valAjustesFragment">Ajustes de Usuario</string>
+    <string name="val_email">Correo electronico</string>
+    <string name="val_contra">Contraseña</string>
+    <string name="val_login">Inciar sesión</string>
+    <string name="val_regis">Crear cuenta nueva</string>
 </resources>
