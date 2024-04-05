@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/tareasFragment">
+    <fragment
+        android:id="@+id/ajustesFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.AjustesFragment"
+        android:label="@string/valAjustesFragment"
+        tools:layout="@layout/fragment_ajustes" />
+    <fragment
+        android:id="@+id/eventosFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.EventosFragment"
+        android:label="@string/valEventosFragment"
+        tools:layout="@layout/fragment_eventos" />
+    <fragment
+        android:id="@+id/examenesFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.ExamenesFragment"
+        android:label="@string/valExamenesFragment"
+        tools:layout="@layout/fragment_examenes" />
+    <fragment
+        android:id="@+id/recursosFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.RecursosFragment"
+        android:label="@string/valRecursosFragment"
+        tools:layout="@layout/fragment_recursos" />
+    <fragment
+        android:id="@+id/reunionFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.ReunionFragment"
+        android:label="@string/valReunionFragment"
+        tools:layout="@layout/fragment_reunion" />
+    <fragment
+        android:id="@+id/tareasFragment"
+        android:name="pe.edu.idat.proyectofinal.view.fragment.TareasFragment"
+        android:label="@string/valTareasFragment"
+        tools:layout="@layout/fragment_tareas" />
+</navigation>
