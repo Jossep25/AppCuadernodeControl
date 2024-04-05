@@ -80,7 +80,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/border_button_ingresar"
         android:text="@string/val_login"
         android:textColor="@color/white"
         app:icon="@drawable/baseline_login_24"
@@ -95,13 +94,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/val_regis"
-        android:textColor="#ED1B23"
-        android:background="@drawable/border_button_registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.641" />
+        app:layout_constraintVertical_bias="0.641"
+        style="@style/OutlinedButtonCustom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
