@@ -40,11 +40,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.5">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etusuario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/val_email"/>
+            android:layout_height="42dp"
+            android:background="@drawable/border"
+            android:hint="@string/val_email"
+            android:paddingStart="20dp"
+            android:textStyle="italic"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,36 +61,47 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.5"
         app:passwordToggleEnabled="true">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtpassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
+            android:background="@drawable/border"
             android:hint="@string/val_contra"
-            android:inputType="text|textPassword"/>
+            android:inputType="text|textPassword"
+            android:paddingStart="20dp"
+            android:textStyle="italic"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_button_ingresar"
         android:text="@string/val_login"
+        android:textColor="@color/white"
         app:icon="@drawable/baseline_login_24"
         app:iconGravity="textStart"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"/>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
     <Button
         android:id="@+id/btnregistro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/val_regis"
+        android:textColor="#ED1B23"
+        android:background="@drawable/border_button_registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.641" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
