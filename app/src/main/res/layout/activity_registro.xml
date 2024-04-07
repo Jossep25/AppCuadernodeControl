@@ -43,7 +43,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtusuario"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_nombre"
             android:paddingStart="20dp"
@@ -64,7 +64,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtdni"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:inputType="number"
             android:background="@drawable/border"
             android:hint="@string/val_dni"
@@ -86,7 +86,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edfecha"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_fecha"
             android:paddingStart="20dp"
@@ -107,7 +107,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtelefono"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_telef"
             android:inputType="number"
@@ -129,7 +129,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtemail"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_email"
             android:paddingStart="20dp"
@@ -150,7 +150,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtpassword"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_contra"
             android:inputType="text|textPassword"

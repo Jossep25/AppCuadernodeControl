@@ -1,4 +1,3 @@
 package pe.edu.idat.proyectofinal.retrofit.request
-
-data class LoginRequest(var correo: String,
+data class LoginRequest(var docidentidad: String,
                         var contrasena: String)

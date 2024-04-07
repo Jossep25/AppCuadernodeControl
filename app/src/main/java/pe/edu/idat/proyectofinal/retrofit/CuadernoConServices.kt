@@ -10,7 +10,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface CuadernoConServices {
-    @GET("login")
+    @POST("login")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
     @POST("usuario")
     fun register(@Body registrarRequest: RegistrarRequest): Call<RegistrarResponse>

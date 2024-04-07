@@ -5,4 +5,4 @@ data class RegistrarRequest(var nombres: String,
                             var fechanac: String,
                             var telefono: String,
                             var correo: String,
-                            var contraseña: String)
+                            var contrasena: String)
