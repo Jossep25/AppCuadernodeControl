@@ -2,9 +2,8 @@ package pe.edu.idat.proyectofinal.retrofit
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import java.util.concurrent.TimeUnit
-object CuardernoConCliente {
+object CuadernoConCliente {
     private var retrofitCliente = OkHttpClient.Builder()
         .connectTimeout(1, TimeUnit.MINUTES)
         .readTimeout(15, TimeUnit.MINUTES)
@@ -15,7 +14,7 @@ object CuardernoConCliente {
         .client(retrofitCliente)
         .build()
 
-    val retrofitService: CuardernoConServices by lazy {
-        buildRetrofit().create(CuardernoConServices::class.java)
+    val retrofitService: CuadernoConServices by lazy {
+        buildRetrofit().create(CuadernoConServices::class.java)
     }
 }
