@@ -65,6 +65,7 @@
             android:id="@+id/edtdni"
             android:layout_width="match_parent"
             android:layout_height="42dp"
+            android:inputType="number"
             android:background="@drawable/border"
             android:hint="@string/val_dni"
             android:paddingStart="20dp"
@@ -109,6 +110,7 @@
             android:layout_height="42dp"
             android:background="@drawable/border"
             android:hint="@string/val_telef"
+            android:inputType="number"
             android:paddingStart="20dp"
             android:textStyle="italic"
             tools:ignore="TouchTargetSizeCheck" />
@@ -183,6 +185,4 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin"
         app:layout_constraintVertical_bias="0.169" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
