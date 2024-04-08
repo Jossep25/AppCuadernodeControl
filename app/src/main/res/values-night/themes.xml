@@ -1,7 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Proyectofinal" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primaty</item>
     </style>
+    <style name="Theme.Proyectofinal" parent="Base.Theme.Proyectofinal" />
+    <style name="OutlinedButtonCustom" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/primaty</item>
+    </style>
+    <style name="Theme.Proyectofinal.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Proyectofinal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Proyectofinal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
