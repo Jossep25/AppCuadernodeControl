@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ui.RegistroActivity">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -70,6 +71,7 @@
             android:hint="@string/val_dni"
             android:paddingStart="20dp"
             android:textStyle="italic"
+            android:maxLength="8"
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,6 +114,7 @@
             android:hint="@string/val_telef"
             android:inputType="number"
             android:paddingStart="20dp"
+            android:maxLength="9"
             android:textStyle="italic"
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -157,10 +160,9 @@
             android:paddingStart="20dp"
             android:textStyle="italic"
             tools:ignore="TouchTargetSizeCheck" />
-
     </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:id="@+id/btnlogin"
+        android:id="@+id/btnregistrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -172,9 +174,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
-
     <Button
-        android:id="@+id/btnregistro"
+        android:id="@+id/btncancelar"
         style="@style/OutlinedButtonCustom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -183,6 +184,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintTop_toBottomOf="@+id/btnregistrar"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
