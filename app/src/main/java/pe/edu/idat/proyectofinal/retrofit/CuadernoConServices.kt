@@ -16,6 +16,6 @@ interface CuadernoConServices {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
     @POST("usuario")
     fun register(@Body registrarRequest: RegistrarRequest): Call<RegistrarResponse>
-    @GET("api/eventos")
+    @GET("eventos")
     fun eventos(@Query("idusuario") idusuario: Int):Call<List<EventosResponse>>
 }
