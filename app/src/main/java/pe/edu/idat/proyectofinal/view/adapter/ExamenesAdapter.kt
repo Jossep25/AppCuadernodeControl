@@ -18,8 +18,12 @@ class ExamenesAdapter(private var listaExamenes: List<ExamenesResponse>) : Recyc
 
         with(holder){
             with(listaExamenes[position]){
-                binding.textViewFecha.text = fechaexamen
-                binding.textViewCursoExamen.text = cursoexamen
+                binding.tvExamenNombreHijo.text = nombre_hijo
+                binding.tvExamenCurso.text = curso
+                binding.tvExamenFecha.text = fecha
+                binding.tvExamenDescripcion.text = descripcion
+                binding.tvExamenCategoria.text = nombre_categoria
+
             }
         }
     }

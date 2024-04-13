@@ -9,24 +9,23 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TareasRepository {
-    var tareasResponse = MutableLiveData<List<TareasResponse>>()
-
-    fun tareas(): MutableLiveData<List<TareasResponse>>{
-        val call: Call<List<TareasResponse>> = CuadernoConCliente.retrofitService.tareas()
-        call.enqueue(object : Callback<List<TareasResponse>>{
-            override fun onResponse(
-                call: Call<List<TareasResponse>>,
-                response: Response<List<TareasResponse>>
-            ) {
-                tareasResponse.value = response.body()
+    /*fun tareas(idusuario: Int): MutableLiveData<List<TareasResponse>> {
+        val call: Call<List<TareasResponse>> = CuadernoConCliente.retrofitService.tareas(idusuario)
+        val tareasResponse = MutableLiveData<List<TareasResponse>>()
+        call.enqueue(object : Callback<List<TareasResponse>> {
+            override fun onResponse(call: Call<List<TareasResponse>>, response: Response<List<TareasResponse>>) {
+                if (response.isSuccessful) {
+                    val tareas = response.body()
+                    Log.d("TareasRepository", "Respuesta exitosa: $tareas")
+                    tareasResponse.value = tareas ?: emptyList()
+                } else {
+                    Log.e("TareasRepository", "Error en la respuesta: ${response.code()}")
+                }
             }
-
             override fun onFailure(call: Call<List<TareasResponse>>, t: Throwable) {
                 Log.i("ErrorListTareas", t.message.toString())
             }
-
         })
         return tareasResponse
-    }
-
+    }*/
 }

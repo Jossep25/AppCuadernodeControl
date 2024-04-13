@@ -7,9 +7,9 @@ import pe.edu.idat.proyectofinal.retrofit.response.TareasResponse
 
 class TareasViewModel: ViewModel() {
 
-    private var repository = TareasRepository()
+    /*private var repository = TareasRepository()
 
-    fun listarTareas(): LiveData<List<TareasResponse>>{
-        return repository.tareas()
-    }
+    fun listarTareas(idusuario: Int): LiveData<List<TareasResponse>>{
+        return repository.tareas(idusuario)
+    }*/
 }
