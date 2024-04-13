@@ -9,8 +9,7 @@ import pe.edu.idat.proyectofinal.retrofit.response.EventosResponse
 class EventosViewModel: ViewModel() {
     private  var repository = EventosRepository()
 
-    fun listarEventos(idUsuario: Int): LiveData<List<EventosResponse>> {
-        val eventosRequest = EventosRequest()
-        return repository.eventos(eventosRequest)
+    fun cargarEventos(eventosRequest: EventosRequest): LiveData<List<EventosResponse>> {
+        return repository.cargarEventos(eventosRequest)
     }
 }

@@ -1,12 +1,15 @@
 package pe.edu.idat.proyectofinal.util
 import android.app.Application
+import android.content.Context
+
 class MiApp : Application(){
-    companion object{
-        lateinit var instancia: MiApp
+    init {
+        instancia = this
     }
 
-    override fun onCreate() {
-        super.onCreate()
-        instancia = this
+    companion object{
+        lateinit var instancia: MiApp
+            private set
+        val applicationContext: Context get() {return instancia.applicationContext}
     }
 }

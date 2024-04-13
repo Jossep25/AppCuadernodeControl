@@ -12,15 +12,23 @@ import retrofit2.Response
 class EventosRepository {
 
     var eventosResponse = MutableLiveData<List<EventosResponse>>()
-    fun eventos(eventosRequest: EventosRequest): MutableLiveData<List<EventosResponse>>{
-        val call : Call<List<EventosResponse>> = CuadernoConCliente.retrofitService.eventos(
-            eventosRequest.usuarioId)
+    fun cargarEventos(eventosRequest: EventosRequest): MutableLiveData<List<EventosResponse>>{
+        val call : Call<List<EventosResponse>> = CuadernoConCliente.retrofitService.eventos(eventosRequest)
         call.enqueue(object : Callback<List<EventosResponse>> {
             override fun onResponse(
                 call: Call<List<EventosResponse>>,
                 response: Response<List<EventosResponse>>
             ) {
-                eventosResponse.value = response.body()
+                if (response.isSuccessful) {
+                    val eventos = response.body()
+                    if (eventos != null) {
+                        eventosResponse.value = eventos.toList()
+                    } else {
+                        Log.e("EventosResponse", "La lista de eventos es nula")
+                    }
+                } else {
+                    Log.e("EventosResponse", "Error al recibir los eventos: ${response.code()}")
+                }
             }
             override fun onFailure(call: Call<List<EventosResponse>>, t: Throwable) {
                 Log.i("ErrorListEventos", t.message.toString())

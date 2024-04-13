@@ -1,5 +1,6 @@
 package pe.edu.idat.proyectofinal.retrofit
 
+import pe.edu.idat.proyectofinal.retrofit.request.EventosRequest
 import pe.edu.idat.proyectofinal.retrofit.request.LoginRequest
 import pe.edu.idat.proyectofinal.retrofit.request.RegistrarRequest
 import pe.edu.idat.proyectofinal.retrofit.response.EventosResponse
@@ -19,8 +20,8 @@ interface CuadernoConServices {
     @POST("usuario")
     fun register(@Body registrarRequest: RegistrarRequest): Call<RegistrarResponse>
 
-    @GET("eventos")
-    fun eventos(@Query("usuarioId") idusuario: String):Call<List<EventosResponse>>
+    @POST("eventos")
+    fun eventos(@Body eventosRequest: EventosRequest):Call<List<EventosResponse>>
 
     @GET("examenes")
     fun examenes(): Call<List<ExamenesResponse>>

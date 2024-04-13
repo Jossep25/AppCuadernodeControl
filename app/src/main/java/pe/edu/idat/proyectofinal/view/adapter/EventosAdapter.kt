@@ -18,11 +18,11 @@ class EventosAdapter (private var listaEventos:List<EventosResponse>) : Recycler
     override fun onBindViewHolder(holder: EventosAdapter.ViewHolder, position: Int) {
         with(holder){
             with(listaEventos[position]){
-                binding.tvnombre.text = nombre_hijo
-                binding.tvcategoria.text = nombre_categoria
-                binding.tvfecha.text = fecha
-                binding.tvdescripcion.text = descripcion
-                binding.tvcurso.text= curso
+                binding.tvEventoNombre.text = nombre_hijo
+                binding.tvEventosCurso.text = nombre_categoria
+                binding.tvEventoFecha.text = fecha
+                binding.tvEventoDescripcion.text = descripcion
+                binding.tvEventoCategoria.text= curso
             }
         }
     }
