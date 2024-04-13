@@ -10,7 +10,7 @@ class EventosViewModel: ViewModel() {
     private  var repository = EventosRepository()
 
     fun listarEventos(idUsuario: Int): LiveData<List<EventosResponse>> {
-        val eventosRequest = EventosRequest(idUsuario)
+        val eventosRequest = EventosRequest()
         return repository.eventos(eventosRequest)
     }
 }

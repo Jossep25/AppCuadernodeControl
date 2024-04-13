@@ -1,11 +1,12 @@
-package pe.edu.idat.proyectofinal.view.fragment
+package pe.edu.idat.proyectofinal.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.idat.proyectofinal.databinding.ItemTareaBinding
+import pe.edu.idat.proyectofinal.retrofit.response.TareasResponse
 
-class TareasAdapter(private var lista: List<String>) : RecyclerView.Adapter<TareasAdapter.ViewHolder>(){
+class TareasAdapter(private var listaTareas: List<TareasResponse>) : RecyclerView.Adapter<TareasAdapter.ViewHolder>(){
 
     inner class ViewHolder(val binding: ItemTareaBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -14,13 +15,17 @@ class TareasAdapter(private var lista: List<String>) : RecyclerView.Adapter<Tare
         return ViewHolder(binding)
     }
 
-    override fun getItemCount() = lista.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.textViewFecha.setText(lista.get(position))
-        holder.binding.textViewTitulo.setText(lista.get(position))
-        holder.binding.textViewDescripcion.setText(lista.get(position))
+        with(holder){
+            with(listaTareas[position]){
+                binding.textViewFecha.text = fechatarea
+                binding.textViewTitulo.text= tituloTarea
+                binding.textViewDescripcion.text= descripciontarea
+            }
+        }
     }
+
+    override fun getItemCount() : Int = listaTareas.size
 
 
 }

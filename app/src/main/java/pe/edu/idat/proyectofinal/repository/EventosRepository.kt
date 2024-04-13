@@ -14,7 +14,7 @@ class EventosRepository {
     var eventosResponse = MutableLiveData<List<EventosResponse>>()
     fun eventos(eventosRequest: EventosRequest): MutableLiveData<List<EventosResponse>>{
         val call : Call<List<EventosResponse>> = CuadernoConCliente.retrofitService.eventos(
-            eventosRequest.idusuario)
+            eventosRequest.usuarioId)
         call.enqueue(object : Callback<List<EventosResponse>> {
             override fun onResponse(
                 call: Call<List<EventosResponse>>,

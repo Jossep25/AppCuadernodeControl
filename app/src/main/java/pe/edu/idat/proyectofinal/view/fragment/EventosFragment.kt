@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import pe.edu.idat.proyectofinal.R
 import pe.edu.idat.proyectofinal.databinding.FragmentEventosBinding
+
 import pe.edu.idat.proyectofinal.view.adapter.EventosAdapter
 import pe.edu.idat.proyectofinal.viewmodel.EventosViewModel
 

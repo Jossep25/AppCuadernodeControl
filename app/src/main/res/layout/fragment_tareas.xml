@@ -7,6 +7,8 @@
     tools:context=".view.fragment.TareasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvtareas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:ignore="DuplicateIds" />
 </FrameLayout>
