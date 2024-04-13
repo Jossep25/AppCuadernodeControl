@@ -1,7 +1,9 @@
 package pe.edu.idat.proyectofinal.view.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -59,5 +61,13 @@ class HomeActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val idItem = item.itemId
+        if(idItem == R.id.action_cerrar){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
