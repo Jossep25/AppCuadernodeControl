@@ -10,22 +10,20 @@ class TareasAdapter(private var listaTareas: List<TareasResponse>) : RecyclerVie
 
     inner class ViewHolder(val binding: ItemTareaBinding) : RecyclerView.ViewHolder(binding.root)
 
-    fun setData(tareas: List<TareasResponse>) {
-        listaTareas = tareas
-        notifyDataSetChanged()
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TareasAdapter.ViewHolder {
         val binding = ItemTareaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TareasAdapter.ViewHolder, position: Int) {
         with(holder) {
             with(listaTareas[position]) {
-                binding.txtFecha.text = fecha
-                binding.txtTitulo.text = curso
-                binding.txtDescripcion.text = descripcion
+                binding.tvTareaNombreHijo.text = nombre_hijo
+                binding.tvTareaCurso.text = curso
+                binding.tvTareaFecha.text= fecha
+                binding.tvTareaDescripcion.text = descripcion
+                binding.tvTareaCategoria.text = nombre_categoria
+
             }
         }
     }
