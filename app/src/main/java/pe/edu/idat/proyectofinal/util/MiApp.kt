@@ -12,4 +12,5 @@ class MiApp : Application(){
             private set
         val applicationContext: Context get() {return instancia.applicationContext}
     }
+
 }

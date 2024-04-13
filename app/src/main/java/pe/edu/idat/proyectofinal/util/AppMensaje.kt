@@ -6,13 +6,13 @@ import com.google.android.material.snackbar.Snackbar
 import pe.edu.idat.proyectofinal.R
 
 object AppMensaje {
-    fun enviarMensaje(vista: View, mensaje: String, tipo: Noti){
+    fun enviarMensaje(vista: View, mensaje: String, tipo: TipoMensaje){
         val snackBar = Snackbar.make(vista, mensaje, Snackbar.LENGTH_LONG)
         when(tipo){
-            Noti.ERROR-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.error))
-            Noti.CORRECTO-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.correcto))
-            Noti.ADVERTENCIA-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.advertencia))
-            Noti.INFORMACION-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.info))
+            TipoMensaje.ERROR-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.error))
+            TipoMensaje.CORRECTO-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.correcto))
+            TipoMensaje.ADVERTENCIA-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.advertencia))
+            TipoMensaje.INFORMACION-> snackBar.setBackgroundTint(ContextCompat.getColor(MiApp.instancia, R.color.info))
         }
         snackBar.show()
     }

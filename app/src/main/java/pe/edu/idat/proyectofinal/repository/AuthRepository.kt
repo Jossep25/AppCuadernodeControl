@@ -14,6 +14,7 @@ import retrofit2.Response
 class AuthRepository {
     var loginResponse = MutableLiveData<LoginResponse>()
     var registrarResponse = MutableLiveData<RegistrarResponse>()
+
     fun login(loginRequest: LoginRequest): MutableLiveData<LoginResponse>{
         val call: Call<LoginResponse> = CuadernoConCliente.retrofitService.login(loginRequest)
         call.enqueue(object : Callback<LoginResponse> {
@@ -26,8 +27,8 @@ class AuthRepository {
         })
         return loginResponse
     }
-    fun registro(registroRequest: RegistrarRequest): MutableLiveData<RegistrarResponse>{
-        val call: Call<RegistrarResponse> = CuadernoConCliente.retrofitService.register(registroRequest)
+    fun registro(registrarRequest: RegistrarRequest): MutableLiveData<RegistrarResponse>{
+        val call: Call<RegistrarResponse> = CuadernoConCliente.retrofitService.registrar(registrarRequest)
         call.enqueue(object : Callback<RegistrarResponse>{
             override fun onResponse(call: Call<RegistrarResponse>, response: Response<RegistrarResponse>) {
                 registrarResponse.value = response.body()

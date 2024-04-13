@@ -22,8 +22,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="328dp"
-        android:layout_height="322dp"
+        android:layout_width="283dp"
+        android:layout_height="269dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.333"
@@ -80,27 +80,36 @@
         android:id="@+id/btnlogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="@string/val_login"
         android:textColor="@color/white"
         app:icon="@drawable/baseline_login_24"
         app:iconGravity="textStart"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/cbRecordarUsuario" />
 
     <Button
         android:id="@+id/btnregistro"
+        style="@style/OutlinedButtonCustom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/val_regis"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.641"
-        style="@style/OutlinedButtonCustom"/>
+        app:layout_constraintVertical_bias="0.212" />
+
+    <CheckBox
+        android:id="@+id/cbRecordarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rscbRecordarUsuario"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 package pe.edu.idat.proyectofinal.util
 
-enum class Noti {
+enum class TipoMensaje {
     ERROR, CORRECTO, ADVERTENCIA, INFORMACION
 }
