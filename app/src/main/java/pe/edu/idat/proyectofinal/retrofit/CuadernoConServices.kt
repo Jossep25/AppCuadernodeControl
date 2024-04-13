@@ -10,6 +10,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Body
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface CuadernoConServices {
     @POST("login")
@@ -17,8 +18,8 @@ interface CuadernoConServices {
     @POST("usuario")
     fun register(@Body registrarRequest: RegistrarRequest): Call<RegistrarResponse>
 
-    @GET("examenes")
-    fun examenes(): Call<List<ExamenesResponse>>
+    fun examenes(@Query("usuarioId") idusuario: String): Call<List<ExamenesResponse>>
+
 
     @GET("tareas")
     fun tareas(): Call<List<TareasResponse>>
