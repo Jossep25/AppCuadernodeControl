@@ -18,7 +18,8 @@ interface CuadernoConServices {
     @POST("usuario")
     fun register(@Body registrarRequest: RegistrarRequest): Call<RegistrarResponse>
 
-    fun examenes(@Query("usuarioId") idusuario: String): Call<List<ExamenesResponse>>
+    @GET("examenes")
+    fun examenes(): Call<List<ExamenesResponse>>
 
 
     @GET("tareas")

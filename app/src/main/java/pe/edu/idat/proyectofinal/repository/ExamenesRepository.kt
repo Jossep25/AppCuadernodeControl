@@ -12,8 +12,7 @@ class ExamenesRepository {
     var examenesResponse = MutableLiveData<List<ExamenesResponse>>()
 
     fun examenes() : MutableLiveData<List<ExamenesResponse>>{
-        val idusuario = obteneridusuario()
-        val call : Call<List<ExamenesResponse>> = CuadernoConCliente.retrofitService.examenes(idusuario)
+        val call : Call<List<ExamenesResponse>> = CuadernoConCliente.retrofitService.examenes()
         call.enqueue(object : Callback<List<ExamenesResponse>>{
             override fun onResponse(
                 call: Call<List<ExamenesResponse>>,
@@ -29,11 +28,5 @@ class ExamenesRepository {
         })
         return examenesResponse
     }
-
-    private fun obteneridusuario(): String {
-
-
-    }
-
 
 }
