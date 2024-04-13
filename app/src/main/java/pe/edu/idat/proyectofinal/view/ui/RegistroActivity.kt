@@ -36,7 +36,10 @@ class RegistroActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when(v.id){
-            R.id.btncancelar -> startActivity(Intent(applicationContext, MainActivity::class.java))
+            R.id.btncancelar -> {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                finish()
+            }
             R.id.btnregistrar -> registrarUsuario()
         }
     }
