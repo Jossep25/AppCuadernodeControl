@@ -21,7 +21,7 @@
     <string name="valAjustesFragment">Ajustes de Usuario</string>
     <string name="val_email">Correo electronico</string>
     <string name="val_contra">Contraseña</string>
-    <string name="val_login">Inciar sesión</string>
+    <string name="val_login">Iniciar sesión</string>
     <string name="val_regis">Crear cuenta nueva</string>
     <string name="val_nombre">Nombres</string>
     <string name="val_dni">Doc. Identidad</string>

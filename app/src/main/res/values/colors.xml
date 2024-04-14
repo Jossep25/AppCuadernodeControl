@@ -7,4 +7,5 @@
     <color name="info">#2574AF</color>
     <color name="advertencia">#CF6610</color>
     <color name="correcto">#147216</color>
+    <color name="letras_descripcion">#696969</color>
 </resources>

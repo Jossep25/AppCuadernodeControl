@@ -1,11 +1,15 @@
 package pe.edu.idat.proyectofinal.retrofit.response
 
-data class LoginResponse(var rpta: Boolean,
-                         var idusuario: String,
-                         var nombres: String,
-                         var docidentidad: String,
-                         var correo: String,
-                         var fechanac: String,
-                         var telefono: String,
-                         var contrasena: String,
-                         var mensaje: String)
+data class LoginResponse(
+    var mensaje: String,
+    var rpta: Boolean,
+    var idusuario: Int = 0,
+    var nombres: String = "",
+    var docidentidad: String = "",
+    var correo: String = "",
+    var fechanac: String = "",
+    var telefono: String = "",
+    var contrasena: String = ""
+) {
+    constructor(mensaje: String, rpta: Boolean) : this(mensaje, rpta, 0)
+}

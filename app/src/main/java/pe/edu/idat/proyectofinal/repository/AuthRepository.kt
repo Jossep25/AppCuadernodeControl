@@ -15,11 +15,19 @@ class AuthRepository {
     var loginResponse = MutableLiveData<LoginResponse>()
     var registrarResponse = MutableLiveData<RegistrarResponse>()
 
-    fun login(loginRequest: LoginRequest): MutableLiveData<LoginResponse>{
+    fun login(loginRequest: LoginRequest): MutableLiveData<LoginResponse> {
         val call: Call<LoginResponse> = CuadernoConCliente.retrofitService.login(loginRequest)
         call.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                loginResponse.value = response.body()
+                if (response.isSuccessful) {
+                    loginResponse.value = response.body()
+                } else {
+                    if (response.code() == 500) {
+                        loginResponse.postValue(LoginResponse("Credenciales incorrectas", false))
+                    } else {
+                        loginResponse.postValue(LoginResponse("Error de conexión", false))
+                    }
+                }
             }
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 Log.e("ErrorLogin", t.message.toString())
