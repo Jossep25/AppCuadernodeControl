@@ -30,5 +30,11 @@
     <string name="val_regi">Crear cuenta</string>
     <string name="val_cancel">Cancelar</string>
     <string name="rscbRecordarUsuario">Recordar Uusario</string>
+    <string name="tvtTnh">Nombre Hijo:</string>
+    <string name="tvtCat">"Categoría: "</string>
+    <string name="tvtFecha">"Fecha : "</string>
+    <string name="tvEFecha">Fecha:</string>
+    <string name="tvtDesc">"Descripción: "</string>
+    <string name="tvttCurso">"Curso: "</string>
     <string name="val_cerrar">Cerrar Sesion</string>
 </resources>

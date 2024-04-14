@@ -6,10 +6,12 @@ import pe.edu.idat.proyectofinal.retrofit.request.LoginRequest
 import pe.edu.idat.proyectofinal.retrofit.request.RegistrarRequest
 import pe.edu.idat.proyectofinal.retrofit.response.EventosResponse
 import pe.edu.idat.proyectofinal.retrofit.request.ExamenesRequest
+import pe.edu.idat.proyectofinal.retrofit.request.ReunionesRequest
 import pe.edu.idat.proyectofinal.retrofit.request.TareasRequest
 import pe.edu.idat.proyectofinal.retrofit.response.ExamenesResponse
 import pe.edu.idat.proyectofinal.retrofit.response.LoginResponse
 import pe.edu.idat.proyectofinal.retrofit.response.RegistrarResponse
+import pe.edu.idat.proyectofinal.retrofit.response.ReunionesResponse
 import pe.edu.idat.proyectofinal.retrofit.response.TareasResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -34,6 +36,9 @@ interface CuadernoConServices {
 
     @POST("tareas")
     fun tareas(@Body tareasRequest: TareasRequest): Call<List<TareasResponse>>
+
+    @POST("reuniones")
+    fun  reuniones(@Body reunionesRequest: ReunionesRequest):Call<List<ReunionesResponse>>
 
 
 }
