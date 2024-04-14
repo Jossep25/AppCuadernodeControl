@@ -18,10 +18,12 @@ import pe.edu.idat.proyectofinal.util.TipoMensaje
 import pe.edu.idat.proyectofinal.viewmodel.AuthViewModel
 import pe.edu.idat.proyectofinal.viewmodel.UsuarioViewModel
 
+
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var authViewModel: AuthViewModel
     private lateinit var usuarioViewModel: UsuarioViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,9 +32,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
         binding.btnlogin.setOnClickListener(this)
         binding.btnregistro.setOnClickListener(this)
+        binding.cbRecordarUsuario.setOnClickListener { view ->
+            if (view is CheckBox) {
+                setearValoresRecordar(view.isChecked)
+            }
+        }
         authViewModel.loginResponse.observe(this, Observer {
                 response -> obtenerDatosLogin(response)
         })
+
+        if(recordarDatosLogin()){
+            binding.cbRecordarUsuario.isChecked = true
+            binding.edtemail.isEnabled = false
+            binding.edtpassword.isEnabled = false
+            binding.cbRecordarUsuario.text = "Quitar check para ingresar con otro usuario"
+            usuarioViewModel.obtener()
+                .observe(this, Observer { persona ->
+                    persona?.let {
+                        binding.edtemail.setText(persona.docidentidad)
+                        binding.edtpassword.setText(persona.contrasena)
+                    }
+                })
+        }else{
+            usuarioViewModel.eliminar()
+        }
+
     }
     private fun obtenerDatosLogin(response: LoginResponse) {
         if(response.rpta){
@@ -44,8 +68,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }else{
                 usuarioViewModel.insertar(usuarioEntity)
                 if(binding.cbRecordarUsuario.isChecked){
-                    SharedPreferencesManager().setValorBoolean("PREF_RECORDAR",
-                        true)
+                    SharedPreferencesManager().setValorBoolean("PREF_RECORDAR",true)
                 }
             }
             startActivity(Intent(applicationContext, HomeActivity::class.java))
@@ -59,35 +82,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when(v.id){
             R.id.btnlogin -> autenticarUsuario()
             R.id.btnregistro -> startActivity(Intent(applicationContext, RegistroActivity::class.java))
-            R.id.cbRecordarUsuario ->recordarDatos(v)
-        }
-    }
-
-    private fun recordarDatos(vista: View) {
-        if (vista is CheckBox) {
-            val checkeo = vista.isChecked
-            if (!checkeo) {
-                if (recordarDatosLogin()) {
-                    SharedPreferencesManager().eliminarPreferencia("PREF_RECORDAR")
-                    usuarioViewModel.eliminar()
-                    binding.edtemail.isEnabled = true
-                    binding.edtpassword.isEnabled = true
-                    binding.cbRecordarUsuario.text = getString(R.string.rscbRecordarUsuario)
-                }
-            }
         }
     }
     private fun autenticarUsuario() {
         binding.btnlogin.isEnabled = false
         binding.btnregistro.isEnabled = false
-        authViewModel.login(
-            binding.edtemail.text.toString(),
-            binding.edtpassword.text.toString()
-        )
+        authViewModel.login(binding.edtemail.text.toString(),
+            binding.edtpassword.text.toString())
     }
 
-    private fun recordarDatosLogin(): Boolean {
+    private fun recordarDatosLogin(): Boolean{
         return SharedPreferencesManager().getValorBoolean("PREF_RECORDAR")
     }
+
+
+    private fun setearValoresRecordar(checkeo: Boolean) {
+        if(!checkeo){
+            SharedPreferencesManager().eliminarPreferencia("PREF_RECORDAR")
+            usuarioViewModel.eliminar()
+            binding.edtemail.isEnabled = true
+            binding.edtpassword.isEnabled = true
+            binding.cbRecordarUsuario.text = getString(R.string.rscbRecordarUsuario)
+        }
+    }
+
+
 }
 

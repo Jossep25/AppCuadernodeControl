@@ -15,7 +15,7 @@ class TareasAdapter(private var listaTareas: List<TareasResponse>) : RecyclerVie
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TareasAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(listaTareas[position]) {
                 binding.tvTareaNombreHijo.text = nombre_hijo
