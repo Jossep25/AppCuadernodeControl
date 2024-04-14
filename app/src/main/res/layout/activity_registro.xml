@@ -91,6 +91,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/val_fecha"
+            android:clickable="false"
+            android:focusable="false"
             android:paddingStart="20dp"
             android:textStyle="italic"
             tools:ignore="TouchTargetSizeCheck" />
