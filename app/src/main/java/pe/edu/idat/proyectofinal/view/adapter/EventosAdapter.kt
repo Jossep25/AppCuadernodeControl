@@ -19,10 +19,10 @@ class EventosAdapter (private var listaEventos:List<EventosResponse>) : Recycler
         with(holder){
             with(listaEventos[position]){
                 binding.tvEventoNombre.text = nombre_hijo
-                binding.tvEventosCurso.text = nombre_categoria
+                binding.tvEventosCurso.text = curso
                 binding.tvEventoFecha.text = fecha
                 binding.tvEventoDescripcion.text = descripcion
-                binding.tvEventoCategoria.text= curso
+
             }
         }
     }

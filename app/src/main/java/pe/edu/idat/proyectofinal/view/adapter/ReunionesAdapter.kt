@@ -24,7 +24,7 @@ class ReunionesAdapter (private var listaReuniones: List<ReunionesResponse>) : R
                 binding.tvEventoCurso.text = curso
                 binding.tvReunionFecha.text = fecha
                 binding.tvReunionDescripcion.text = descripcion
-                binding.tvReunionCategoria.text = nombre_categoria
+
 
             }
         }
