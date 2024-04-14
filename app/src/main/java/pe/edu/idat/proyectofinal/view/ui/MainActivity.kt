@@ -59,17 +59,35 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when(v.id){
             R.id.btnlogin -> autenticarUsuario()
             R.id.btnregistro -> startActivity(Intent(applicationContext, RegistroActivity::class.java))
+            R.id.cbRecordarUsuario ->recordarDatos(v)
+        }
+    }
+
+    private fun recordarDatos(vista: View) {
+        if (vista is CheckBox) {
+            val checkeo = vista.isChecked
+            if (!checkeo) {
+                if (recordarDatosLogin()) {
+                    SharedPreferencesManager().eliminarPreferencia("PREF_RECORDAR")
+                    usuarioViewModel.eliminar()
+                    binding.edtemail.isEnabled = true
+                    binding.edtpassword.isEnabled = true
+                    binding.cbRecordarUsuario.text = getString(R.string.rscbRecordarUsuario)
+                }
+            }
         }
     }
     private fun autenticarUsuario() {
         binding.btnlogin.isEnabled = false
         binding.btnregistro.isEnabled = false
-        authViewModel.login(binding.edtemail.text.toString(),
-            binding.edtpassword.text.toString())
+        authViewModel.login(
+            binding.edtemail.text.toString(),
+            binding.edtpassword.text.toString()
+        )
     }
 
-    private fun recordarDatosLogin(): Boolean{
+    private fun recordarDatosLogin(): Boolean {
         return SharedPreferencesManager().getValorBoolean("PREF_RECORDAR")
     }
-
 }
+

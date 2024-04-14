@@ -30,4 +30,5 @@
     <string name="val_regi">Crear cuenta</string>
     <string name="val_cancel">Cancelar</string>
     <string name="rscbRecordarUsuario">Recordar Uusario</string>
+    <string name="val_cerrar">Cerrar Sesion</string>
 </resources>
