@@ -13,19 +13,24 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import pe.edu.idat.proyectofinal.R
 import pe.edu.idat.proyectofinal.databinding.ActivityHomeBinding
+import pe.edu.idat.proyectofinal.viewmodel.UsuarioViewModel
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var usuarioViewModel: UsuarioViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
 
         setSupportActionBar(binding.appBarHome.toolbar)
 

@@ -14,7 +14,7 @@ class ExamenesAdapter(private var listaExamenes: List<ExamenesResponse>) : Recyc
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ExamenesAdapter.ViewHolder , position: Int) {
 
         with(holder){
             with(listaExamenes[position]){
